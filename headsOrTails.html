@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Heads or Tails</title>
+</head>
+
+<body>
+    <h1>Heads or Tails</h1>
+
+    <button onclick="playGame('Heads')">
+        Heads
+    </button>
+
+    <button onclick="playGame('Tails')">
+        Tails
+    </button>
+
+    <script>
+        function playGame(choice) {
+            const randomNumber = Math.random();
+            let result = '';
+
+            if (randomNumber < 0.5) {
+                result = 'Heads';
+            } else {
+                result = 'Tails';
+            }
+
+            if (choice === result) {
+                alert('You win!');
+            } else {
+                alert('You lose!');
+            }
+        }
+    </script>
+</body>
+</html>
