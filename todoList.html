@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Todo List</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <h1>Todo List</h1>
+        <input placeholder="Todo Name" class="input">
+        <button>Add Todo</button>
+
+        <script>
+            const todo = [];
+
+            function todoList() {
+                const inputElement = document.querySelector('.input');
+                const name = inputElement.value;
+
+                todoList.push(name);
+                console.log(todoList);
+
+                inputElement.value = '';
+            }
+        </script>
+    </body>
+</html>
