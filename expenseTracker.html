@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <meta
+</head>
+<body>
+
+    <h1>Expense Tracker</h1>
+
+    <input id="expenseName" placeholder="Expense Name">
+    <input id="expenseAmount" type="number" placeholder="Amount">
+
+    <button onclick="addExpense()">Add Expense</button>
+    <button onclick="showExpenses()">Show Expenses</button>
+    <button onclick="findExpense()">Find Expense</button>
+    <button onclick="showAbove200()">Above ₹200</button>
+    <button onclick="showTotal()">Total Spending</button>
+    <button onclick="sortExpenses()">Sort By Amount</button>
+
+    <script>
+
+        const expenses = [];
+
+        function addExpense() {
+            const name = document.getElementById('expenseName').value;
+            const amount = Number(document.getElementById('expenseAmount').value);
+
+            expenses.push({
+                name: name,
+                amount: amount
+            });
+
+            console.log(expenses);
+        }
+
+        function showExpenses() {
+            console.log(expenses);
+        }
+
+        function findExpense() {
+            const searchName = prompt("Enter expense name:");
+
+            const expense = expenses.find(function(item) {
+                return item.name === searchName;
+            });
+
+            console.log(expense);
+        }
+
+        function showAbove200() {
+            const result = expenses.filter(function(item) {
+                return item.amount > 200;
+            });
+
+            console.log(result);
+        }
+
+        function showTotal() {
+            const total = expenses.reduce(function(sum, item) {
+                return sum + item.amount;
+            }, 0);
+
+            console.log("Total Spending: ₹" + total);
+        }
+
+        function sortExpenses() {
+            expenses.sort(function(a, b) {
+                return a.amount - b.amount;
+            });
+
+            console.log(expenses);
+        }
+    </script>
+</body>
+</html>
